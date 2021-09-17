@@ -3,10 +3,11 @@ name: Clout Tools Build, Lint, Test
 on:
   push:
     branches:
-      - '**'
-      - '!master'
+      - **
+      - !master
   pull_request:
-    branches: [main]
+    branches:
+      - main
 
 jobs:
   build:
