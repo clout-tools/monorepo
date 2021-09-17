@@ -2,8 +2,9 @@ name: Clout Tools Build, Lint, Test
 
 on:
   push:
-    branches-ignore:
-      - 'main'
+    branches:
+      - '**'
+      - '!master'
   pull_request:
     branches: [ main ]
 
