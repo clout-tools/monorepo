@@ -26,5 +26,5 @@ jobs:
           cache: 'npm'
       - run: npm install
 
-      - run: git fetch --no-tags --prune --depth=5 origin main
+      - run: git fetch origin main
       - run: npm run workspace:version
