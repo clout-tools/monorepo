@@ -17,6 +17,7 @@
     "version:minor": "nx run workspace:version --version=minor --baseBranch=main ",
     "version:patch": "nx run workspace:version --version=patch --baseBranch=main",
     "version:publish": "nx affected --target version",
+    "workspace:version": "nx run workspace:version",
     "deploy:package": "nx affected --target deploy --base=origin/main --head=HEAD",
     "cz": "cz",
     "prepare": "husky install"
