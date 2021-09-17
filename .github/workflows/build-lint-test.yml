@@ -1,0 +1,28 @@
+name: Clout Tools Build, Lint, Test
+
+on:
+  push:
+    branches-ignore:
+      - 'main'
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [ '12', '14', '16' ]
+
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        ref: ${{ github.event.pull_request.head.ref }}
+        repository: ${{ github.event.pull_request.head.repo.full_name }}
+        fetch-depth: 0
+   - uses: mansagroup/nrwl-nx-action@v2
+      with:
+        targets: lint,test,build
+        all: 'true'
