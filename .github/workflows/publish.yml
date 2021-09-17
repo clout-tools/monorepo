@@ -1,4 +1,4 @@
-name: Clout Tools Build, Lint, Test
+name: Version / Publish
 
 on:
   push:
