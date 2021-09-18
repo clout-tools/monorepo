@@ -1,12 +1,13 @@
 name: Clout Tools Build, Lint, Test
 
 on:
-  pull_request:
+  push:
     branches:
-      - main
+      - '**'
+      - '!main'
 
 jobs:
-  build:
+  Build-Test-Lint:
     runs-on: ubuntu-latest
 
     strategy:

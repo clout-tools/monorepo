@@ -1,14 +1,14 @@
 name: Version / Publish
 
 on:
-  push:
+  pull_request:
     branches:
-      - 'main'
+      - main
     paths:
       - 'packages/**'
 
 jobs:
-  build:
+  Publish:
     runs-on: ubuntu-latest
 
     strategy:
