@@ -4,7 +4,8 @@ on:
   push:
     branches:
       - 'main'
-      - 'ci/publish'
+    paths:
+      - 'packages/**'
 
 jobs:
   build:
