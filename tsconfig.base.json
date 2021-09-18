@@ -15,7 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@clout-tools/sample-package": ["packages/sample-package/src/index.ts"]
+      "@clout-tools/sample": ["packages/sample/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
