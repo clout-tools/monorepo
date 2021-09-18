@@ -2,6 +2,6 @@ import { sample } from './sample';
 
 describe('sample', () => {
   it('should work', () => {
-    expect(sample()).toEqual('sample');
+    expect(sample()).toEqual('Changing sample');
   });
 });

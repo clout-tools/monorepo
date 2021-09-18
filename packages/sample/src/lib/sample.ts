@@ -1,3 +1,3 @@
 export function sample(): string {
-  return 'sample';
+  return 'Changing sample';
 }
