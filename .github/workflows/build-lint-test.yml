@@ -3,8 +3,9 @@ name: Clout Tools Build, Lint, Test
 on:
   push:
     branches:
-      - '**'
-      - '!main'
+      # - '**'
+      # - '!main'
+      - main
   pull_request:
     branches:
       - main
@@ -15,7 +16,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: ['12', '14', '16']
+        node-version: ['14']
 
     steps:
       - uses: actions/checkout@v2
