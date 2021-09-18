@@ -1,7 +1,7 @@
 name: Version / Publish
 
 on:
-  pull_request:
+  push:
     branches:
       - main
     paths:
