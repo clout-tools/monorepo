@@ -7,7 +7,7 @@ on:
       - '!main'
 
 jobs:
-  build:
+  Build-Test-Lint:
     runs-on: ubuntu-latest
 
     strategy:
