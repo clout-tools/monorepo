@@ -3,8 +3,9 @@ name: Clout Tools Build, Lint, Test
 on:
   push:
     branches:
-      - '**'
-      - '!main'
+      # - '**'
+      # - '!main'
+      - main
   pull_request:
     branches:
       - main
