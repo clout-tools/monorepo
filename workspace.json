@@ -1,6 +1,55 @@
 {
   "version": 2,
   "projects": {
+    "minute-package": {
+      "root": "packages/minute-package",
+      "sourceRoot": "packages/minute-package/src",
+      "projectType": "library",
+      "targets": {
+        "build": {
+          "executor": "@nrwl/node:package",
+          "outputs": [
+            "{options.outputPath}"
+          ],
+          "options": {
+            "outputPath": "dist/packages/minute-package",
+            "tsConfig": "packages/minute-package/tsconfig.lib.json",
+            "packageJson": "packages/minute-package/package.json",
+            "main": "packages/minute-package/src/index.ts",
+            "assets": [
+              "packages/minute-package/*.md"
+            ]
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "outputs": [
+            "{options.outputFile}"
+          ],
+          "options": {
+            "lintFilePatterns": [
+              "packages/minute-package/**/*.ts"
+            ]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": [
+            "coverage/packages/minute-package"
+          ],
+          "options": {
+            "jestConfig": "packages/minute-package/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "deploy": {
+          "executor": "ngx-deploy-npm:deploy",
+          "options": {
+            "access": "public"
+          }
+        }
+      }
+    },
     "package-in-mins": {
       "root": "packages/package-in-mins",
       "sourceRoot": "packages/package-in-mins/src",
