@@ -50,6 +50,55 @@
         }
       }
     },
+    "package-in-mins-v2": {
+      "root": "packages/package-in-mins-v2",
+      "sourceRoot": "packages/package-in-mins-v2/src",
+      "projectType": "library",
+      "targets": {
+        "build": {
+          "executor": "@nrwl/node:package",
+          "outputs": [
+            "{options.outputPath}"
+          ],
+          "options": {
+            "outputPath": "dist/packages/package-in-mins-v2",
+            "tsConfig": "packages/package-in-mins-v2/tsconfig.lib.json",
+            "packageJson": "packages/package-in-mins-v2/package.json",
+            "main": "packages/package-in-mins-v2/src/index.ts",
+            "assets": [
+              "packages/package-in-mins-v2/*.md"
+            ]
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "outputs": [
+            "{options.outputFile}"
+          ],
+          "options": {
+            "lintFilePatterns": [
+              "packages/package-in-mins-v2/**/*.ts"
+            ]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": [
+            "coverage/packages/package-in-mins-v2"
+          ],
+          "options": {
+            "jestConfig": "packages/package-in-mins-v2/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "deploy": {
+          "executor": "ngx-deploy-npm:deploy",
+          "options": {
+            "access": "public"
+          }
+        }
+      }
+    },
     "sample-package": {
       "root": "packages/sample-package",
       "sourceRoot": "packages/sample-package/src",

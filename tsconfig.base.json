@@ -16,6 +16,9 @@
     "baseUrl": ".",
     "paths": {
       "@clout-tools/package-in-mins": ["packages/package-in-mins/src/index.ts"],
+      "@clout-tools/package-in-mins-v2": [
+        "packages/package-in-mins-v2/src/index.ts"
+      ],
       "@clout-tools/sample-package": ["packages/sample-package/src/index.ts"]
     }
   },
