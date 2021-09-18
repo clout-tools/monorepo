@@ -13,6 +13,9 @@
     }
   },
   "projects": {
+    "minute-package": {
+      "tags": []
+    },
     "package-in-mins": {
       "tags": []
     },
