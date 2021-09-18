@@ -1,6 +1,55 @@
 {
   "version": 2,
   "projects": {
+    "package-in-mins": {
+      "root": "packages/package-in-mins",
+      "sourceRoot": "packages/package-in-mins/src",
+      "projectType": "library",
+      "targets": {
+        "build": {
+          "executor": "@nrwl/node:package",
+          "outputs": [
+            "{options.outputPath}"
+          ],
+          "options": {
+            "outputPath": "dist/packages/package-in-mins",
+            "tsConfig": "packages/package-in-mins/tsconfig.lib.json",
+            "packageJson": "packages/package-in-mins/package.json",
+            "main": "packages/package-in-mins/src/index.ts",
+            "assets": [
+              "packages/package-in-mins/*.md"
+            ]
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "outputs": [
+            "{options.outputFile}"
+          ],
+          "options": {
+            "lintFilePatterns": [
+              "packages/package-in-mins/**/*.ts"
+            ]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": [
+            "coverage/packages/package-in-mins"
+          ],
+          "options": {
+            "jestConfig": "packages/package-in-mins/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "deploy": {
+          "executor": "ngx-deploy-npm:deploy",
+          "options": {
+            "access": "public"
+          }
+        }
+      }
+    },
     "sample-package": {
       "root": "packages/sample-package",
       "sourceRoot": "packages/sample-package/src",
@@ -8,25 +57,35 @@
       "targets": {
         "build": {
           "executor": "@nrwl/node:package",
-          "outputs": ["{options.outputPath}"],
+          "outputs": [
+            "{options.outputPath}"
+          ],
           "options": {
             "outputPath": "dist/packages/sample-package",
             "tsConfig": "packages/sample-package/tsconfig.lib.json",
             "packageJson": "packages/sample-package/package.json",
             "main": "packages/sample-package/src/index.ts",
-            "assets": ["packages/sample-package/*.md"]
+            "assets": [
+              "packages/sample-package/*.md"
+            ]
           }
         },
         "lint": {
           "executor": "@nrwl/linter:eslint",
-          "outputs": ["{options.outputFile}"],
+          "outputs": [
+            "{options.outputFile}"
+          ],
           "options": {
-            "lintFilePatterns": ["packages/sample-package/**/*.ts"]
+            "lintFilePatterns": [
+              "packages/sample-package/**/*.ts"
+            ]
           }
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": ["coverage/packages/sample-package"],
+          "outputs": [
+            "coverage/packages/sample-package"
+          ],
           "options": {
             "jestConfig": "packages/sample-package/jest.config.js",
             "passWithNoTests": true
